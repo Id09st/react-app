@@ -1,13 +1,17 @@
 import './App.css';
 import Footer from './components/Footer/Footer';
+import { Main } from './components/Main';
+
+
+
 import Navigation from './components/Nav/Navigation';
-import PLayersDemo from './components/PLayersDemo';
+
 
 function App() {
 return (
 	<div className="App">
       <Navigation/>
-      <PLayersDemo/>
+      <Main/>
       <Footer/>
     </div>
 );

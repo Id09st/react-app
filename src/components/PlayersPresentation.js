@@ -1,10 +1,10 @@
 import React from 'react'
-import { Players } from '../Shared/ListOfPlayers'
-export default function PLayersDemo() {
-  return (
-    <div className='container-fluid'>
+
+export default function PlayersPresentation({players}) {
+    return (
+        <div className='container-fluid'>
                 <div class= "row d-inline-flex">
-                {Players.map((player)=>(
+                {players.map((player)=>(
                     <div class ="col-12 col-sm-6 col-md-4 p-2">
                     <div class="d-flex flex-column text-center border height100" key={player.id}>
                     {/* <div className='column' key={player.id}>
@@ -18,5 +18,7 @@ export default function PLayersDemo() {
                 ))}
             </div>
             </div>
-  )
-}
+      
+    )
+  }
+
