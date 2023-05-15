@@ -1,13 +1,13 @@
 import './App.css';
-import Players from './Players';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Nav/Navigation';
+import PLayersDemo from './components/PLayersDemo';
 
 function App() {
 return (
 	<div className="App">
       <Navigation/>
-      <Players/>
+      <PLayersDemo/>
       <Footer/>
     </div>
 );
