@@ -14,16 +14,18 @@ export default function PlayersPresentation({players}) {
                     <img src={player.img} alt=''/>
                       <h3>{player.name}</h3>
                       <p className='title'>{player.club}</p>
-                      <p><button class="btn btn-block btn-dark" onClick={()=>{setPlayer(player)}}><a href='#popup1' id='openPopUp'>Detail</a></button></p>
+                      <button class="btn btn-block btn-dark" onClick={()=>{setPlayer(player)}}><a href='#popup1' id='openPopUp'>Detail</a></button>
                     </div>
                   </div>    
                 ))}
-                <div id='popup' className='overlay'>
+                <div id='popup1' className='overlay'>
+                  <div className='popup'>
                   <img src={player.img}/>
                   <h2>{player.name}</h2>
                   <a className='close' href='#'>&times;</a>
                   <div className='content'>
                     {player.info}
+                  </div>
                   </div>
                 </div>
             </div>
