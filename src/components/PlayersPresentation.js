@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState } from 'react'
 
 export default function PlayersPresentation({players}) {
+  const [player, setPlayer] = useState([])
     return (
         <div className='container-fluid'>
                 <div class= "row d-inline-flex">
@@ -12,10 +14,18 @@ export default function PlayersPresentation({players}) {
                     <img src={player.img} alt=''/>
                       <h3>{player.name}</h3>
                       <p className='title'>{player.club}</p>
-                      <button class="btn btn-block btn-dark">Detail</button>
+                      <p><button class="btn btn-block btn-dark" onClick={()=>{setPlayer(player)}}><a href='#popup1' id='openPopUp'>Detail</a></button></p>
                     </div>
                   </div>    
                 ))}
+                <div id='popup' className='overlay'>
+                  <img src={player.img}/>
+                  <h2>{player.name}</h2>
+                  <a className='close' href='#'>&times;</a>
+                  <div className='content'>
+                    {player.info}
+                  </div>
+                </div>
             </div>
             </div>
       
