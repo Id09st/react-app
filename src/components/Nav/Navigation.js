@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-
-export default class Navigation extends Component {
-  render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand"></a>
+import React from 'react'
+import { useContext } from 'react'
+import { ThemeContext } from '../ThemeContext'
+export default function Navigation() {
+  const { theme, toggle, dark } = useContext(ThemeContext)
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+      <a className="navbar-brand"></a>
         <button
           className="navbar-toggler"
           type="button"
@@ -16,31 +18,26 @@ export default class Navigation extends Component {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a className="nav-link active" style={{ color: 'white', backgroundColor: '#acac1c' }} href="#home">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" style={{ color: 'white' }} href="#news">
-                News
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" style={{ color: 'white' }} href="#about">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" style={{ color: 'white' }} href="#contact">
-                Contact
-              </a>
-            </li>
+              <li className="nav-item"><a className="nav-link" style={{ color: 'black', backgroundColor: '#acac1c' }} href='#home'>Home</a></li>
+              <li className="nav-item"><a className="nav-link" style={{ color: theme.color }} href='#news'>News</a></li>
+              <li className="nav-item"><a className="nav-link" style={{ color: theme.color }} href='#about'>About</a></li>
+              <li className="nav-item"><a className="nav-link" style={{ color: theme.color }} href='#contact'>Contact</a></li>
           </ul>
         </div>
+          <div style={{position: 'relative'}}>
+          <a className='switch-mode' href='#' onClick={toggle}
+          style={{
+            backgroundColor: theme.backgroundColor,
+            color: theme.color,
+            outline: 'none'
+          }} data-testid="toggle-theme-btn"
+        >
+          Switch Nav to {!dark ? 'Dark' : 'Light'} mode
+         </a>
+         </div>
       </nav>
-    );
-  }
+    </div>
+  )
 }
