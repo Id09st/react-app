@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Players } from '../Shared/ListOfPlayers'
-import PlayersPresentation from './PlayersPresentation';
-
+import PlayersPresentation from './Players/PlayersPresentation';
 
 export class Main extends Component {
     constructor() {

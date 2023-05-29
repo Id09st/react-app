@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import './PlayersPresenstation.css'
 
 export default function PlayersPresentation({players}) {
   const [player, setPlayer] = useState([])
@@ -14,11 +16,14 @@ export default function PlayersPresentation({players}) {
                     <img src={player.img} alt=''/>
                       <h3>{player.name}</h3>
                       <p className='title'>{player.club}</p>
-                      <button class="btn btn-block btn-dark" onClick={()=>{setPlayer(player)}}><a href='#popup1' id='openPopUp'>Detail</a></button>
+                      <Link className="btn btn-block btn-dark" to={`detail/${player.id}`}>
+                        <span className="btn-text">Detail</span>
+                      </Link>
+                      {/* <button class="btn btn-block btn-dark" onClick={()=>{setPlayer(player)}}><a href='#popup1' id='openPopUp'>Detail</a></button> */}
                     </div>
                   </div>    
                 ))}
-                <div id='popup1' className='overlay'>
+                {/* <div id='popup1' className='overlay'>
                   <div className='popup'>
                   <img src={player.img}/>
                   <h2>{player.name}</h2>
@@ -28,9 +33,9 @@ export default function PlayersPresentation({players}) {
                   </div>
                   </div>
                 </div>
+            </div>*/}
             </div>
             </div>
       
     )
   }
-
