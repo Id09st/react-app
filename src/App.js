@@ -11,7 +11,7 @@ function App() {
       <>
         <Navigation />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main/>} />
           <Route path="/contact" element={<ContactEx />} />
           <Route path='/detail/:id' element={<Detail/>}></Route>
         </Routes>
